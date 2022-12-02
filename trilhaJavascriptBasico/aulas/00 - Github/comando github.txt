@@ -1,0 +1,112 @@
+Aula Git e Github (visite: Github Docs)
+
+
+
+Windows         Linux
+cd              cd
+dir             ls
+mkdir           mkdir
+del / rmdir     rm -rf
+
+
+
+
+
+
+Aula Chave SSH e Token
+[SSH Windows]
+Acessar Github e depois "SSH and GPG" e "New SSH Key"
+1 - Abrir o Git Bash                ;
+2 - ssh-keygen -t ed25519 -C email  ;
+3 - Coloca uma Senha Qualquer       ;
+4 - A chave privada e chave publica (.pub) já foi criada em C:\Users\ZZZZZ\.ssh\id_ed25519  ;
+5 - Entrar na pasta usando cmd: cd c/Users/ZZZZZ/.ssh/          ;
+6 - cmd: cat id_ed25519.pub  (ler a chave pública)              ;
+7 - Copiar o conteudo e colar no site do Github ("New SSH Key") e depois clicar em "ADD SSH key";
+8 - Voltar no Git Bash (Na pasta .ssh)                          ;
+9 - Digitar: eval $(ssh-agent -s)                               ;
+10 - ssh-add id_ed25519 (ler a chave privada) 
+11 - Colocar a Senha no passo 3                                 ;
+
+Já pode usar
+
+[SSH Linux]
+1 - ssh-keygen -t ed25519 -C email  ;
+2 - Coloca uma Senha Qualquer       ;
+3 - A chave privada e chave publica (.pub) já foi criada em /home/ZZZZZ/.ssh/id_ed25519  ;
+4 - cd /home/ZZZZZ/.ssh/
+5 - cmd: cat id_ed25519.pub  (ler a chave pública)  
+6 - Copiar o conteudo e colar no site do Github ("New SSH Key") e depois clicar em "ADD SSH key";
+7 - Voltar no Git Bash (Na pasta .ssh)                          ;
+8 - Digitar: eval $(ssh-agent -s)                               ;
+9 - ssh-add id_ed25519 (ler a chave privada) 
+10 - Colocar a Senha no passo 3                                 ;
+
+Já pode usar
+
+[Tokens]
+(Em manutenção)
+
+//=======================================================================================
+[GIT]
+0 - git status
+1 - git init
+2 - git config --global user.email "xxx@xxx.com"
+3 - git config --global user.name xxxxxx
+4 - git add *
+5 - git commit -m "[commit message]"
+
+//=======================================================================================
+[GITHUB]
+0 - git config --list      (lista de configuração)
+1 - git config --global --unset user.email (alterar os dados do user.email)
+2 - git config --global --unset user.name  (alterar os dados do user.name)
+3 - git config --list      (lista de configuração)
+4 - git config --global user.email "xxx@xxx.com"
+5 - git config --global user.name "Xxx"
+
+6 - git remote add origin https://github.com/......./xxxx.git
+7 - git remote -v 
+8 - git status
+9 - git push origin master
+10 - autorizar a senha do github
+11 - Acessar o Github e consultar se foi;
+
+//=======================================================================================
+[Conflitos]
+0 - git status
+1 - git add *
+2 - git commit -m "[commit message]"
+3 - git push origin master
+4 - autorizar a senha do github
+5 - git pull origin master       (puxar o conteúdo do github)
+6 - Editar e consertar os arquivos com problema na sua maquina
+7 - git status
+8 - git add *
+9 - git commit -m "[commit message]"
+10 - git push origin master
+
+
+
+//=======================================================================================
+git add <file> <folder> or git add -A (Add all new and changed files to the staging area)
+git rm <file> <folder>
+git commit -m "[commit message]"
+
+
+git restore --staged <file>..." to unstage
+git clone ssh://git@github.com/[username]/[repository-name].git
+git rm -r [file-name.txt] Remove a file (or folder)
+
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/......./xxxx.git
+git push -u origin master
+
+
+Entrar no Git Bash
+git remote add origin https://github.com/......./xxxx.git
+git push -u origin master

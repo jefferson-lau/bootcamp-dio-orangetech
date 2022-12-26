@@ -1,0 +1,115 @@
+
+
+
+Requisição HTTP:
+
+1º - URL: https://pokeapi.co/api/v2/pokemon
+    ${IP}/${path = caminho de identificação do recurso}
+
+
+
+2º - IP: https://pokeapi.co
+     https://127.0.0.1:80
+
+
+3º - /api/v2/pokemon
+
+
+Request Method: GET | POST | PUT | DELETE| PATCH  ; PADRAO REST
+
+= VARIOS DE REQUISICAO:
+= (BUSCAR RECURSO = GET)
+= (INSERIR DADOS = POST) 
+= (ATUALIZAR DADOS = PUT) 
+= (DELETAR DADOS = PUT)
+= PATCH (NAO SEI)
+
+
+Toda requisição pra um recurso o metodo diz o que quer fazer sobre o recurso.
+
+
+EXEMPLO: 
+? = Query string (chave e valor)
+& = Concatenar para adicionar mais dados no filtro
+
+
+https://pokeapi.co/api/v2/pokemon?type=grass&name=i
+
+
+type = grass
+name = i
+
+
+EXEMPLO 2:
+
+"https://pokeapi.co/api/v2/pokemon?offset=40&limit=20" PAGINACAO LIMITE DE 20 DADOS
+
+
+Request Headers:
+    Configuraçao da api:
+    Ex: accept-language: pt-BR, pt;q=0.9
+    "q=0.9" = Prioridade de Linguagem
+    en-US;q=0.8;
+    en;q=0.7
+    gl;q=0.6
+
+    Autenticacao credenciais:
+    Ex: Authorization (geralmente encontrado ao clicar F12 no browser)
+
+//======================================================================================
+Response Headers:
+    Configuraçao da api:
+        Como a resposa é configurada
+
+//======================================================================================
+
+
+Headers
+Request Method: GET | POST | PUT | DELETE| PATCH  ; PADRAO REST
+
+//======================================================================================
+
+BODY (AREA DE DADOS) CORPO DA REQUISICAO DADO QUE IRA TRAFEGAR NA REQUISICAO DEPENDENDO DO TIPO
+
+*GET NA TEM BODY NA REQUISICAO
+
+PATH QUERY METHODO E OS HEADERS DE Request
+
+POST = BODY (FAZ MAIS SENTIDO)
+
+Ex: 1º - URL: https://pokeapi.co/api/v2/pokemon
+
+
+REQUEST HEADERS
+    content-type: application/json
+
+REQUEST Body
+
+{
+    "name":"teste"
+}
+
+Ex:
+RESPONSE HEADERS (F12-> Network -> Headers -> Response Headers) -> Response (os dados ta passando por json)
+    content-type: application/json; charset=utf-8
+
+
+
+//======================================================================================
+COMPOSICAO
+HTTP STATUS CODE (F12-> Network -> Headers) Numero que volta indica o que aconteceu com a REQUISICAO
+Ex: 200 --> 299 = SUCESSO
+    300 --> 399 = REDIRECT
+    400 --> 499 = ERRO NO CLIENTE
+    500 --> 599 = Erro interno Servidor
+
+
+www.httpstatusdogs.com
+
+Ex: 
+
+
+
+
+
+usar: FETCH API GET JSON ( JOGAR NO GOOGLE )
